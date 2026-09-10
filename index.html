@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Компьютерный мастер Айдар Тагирович | Казань</title>
+  <style>
+    /* 1. ОБЩИЕ СТИЛИ САЙТА */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0b132b; /* Наш фирменный глубокий синий фон */
+      color: #ffffff;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* 2. ШАПКА САЙТА (ХЕДЕР) */
+    header {
+      background: rgba(11, 19, 43, 0.85);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #00b4d8;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .status-badge {
+      background: rgba(0, 255, 204, 0.1);
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* 3. ГЛАВНЫЙ ЭКРАН (HERO SECTION) */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 20px 60px 20px;
+      box-sizing: border-box;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .hero-text h1 span {
+      color: #00b4d8;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      color: #e0e1dd;
+      line-height: 1.6;
+      margin: 0 0 30px 0;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: #90e0ef;
+    }
+
+    /* ФОРМА ОБРАТНОЙ СВЯЗЬЮ */
+    .hero-form-box {
+      width: 100%;
+      max-width: 400px;
+      background: #1c2541;
+      padding: 35px;
+      border-radius: 12px;
+      box-sizing: border-box;
+      border: 1px solid rgba(144, 224, 239, 0.2);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .hero-form-box h3 {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .hero-form-box p {
+      margin: 0 0 25px 0;
+      font-size: 14px;
+      color: #cccccc;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: #90e0ef;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background: #0b132b;
+      border: 1px solid rgba(144, 224, 239, 0.4);
+      padding: 12px;
+      border-radius: 6px;
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #00b4d8;
+      box-shadow: 0 0 10px rgba(0, 180, 216, 0.3);
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #00b4d8;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+    }
+
+    .submit-btn:hover {
+      background: #0077b6;
+    }
+
+    /* 4. СЕКЦИЯ ПРАЙС-ЛИСТА */
+    .prices-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      box-sizing: border-box;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      text-transform: uppercase;
+      color: #00b4d8;
+      margin: 0 0 10px 0;
+    }
+
+    .section-title p {
+      color: #cccccc;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .prices-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .price-card {
+      background: #1c2541;
+      border: 1px solid rgba(144, 224, 239, 0.15);
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s, border-color 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: #00b4d8;
+    }
+
+    .card-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .price-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #cccccc;
+      line-height: 1.5;
+      margin: 0 0 20px 0;
+      flex-grow: 1;
+    }
+
+    .card-price {
+      font-size: 24px;
+      font-weight: 800;
+      color: #00ffcc;
+    }
+
+    /* 5. ЮРИДИЧЕСКИЙ БЛОК БЕЗОПАСНОСТИ */
+    .legal-section {
+      background: #1c2541;
+      padding: 50px 20px;
+      border-top: 1px solid rgba(144, 224, 239, 0.15);
+      border-bottom: 1px solid rgba(144, 224, 239, 0.15);
+    }
+
+    .legal-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .legal-box {
+      background: #0b132b;
+      border: 1px solid rgba(144, 224, 239, 0.2);
+      padding: 25px;
+      border-radius: 8px;
+      flex: 1;
+      max-width: 500px;
+      box-sizing: border-box;
+    }
+
+    .legal-box h4 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      color: #00ffcc;
+    }
+
+    .legal-box p {
+      margin: 0;
+      font-size: 15px;
+      color: #cccccc;
+      line-height: 1.5;
+    }
+
+    /* 6. ПОДВЕЛ САЙТА (ФУТЕР) */
+    footer {
+      background: #070a13;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(0, 180, 216, 0.1);
+    }
+
+    footer p {
+      margin: 5px 0;
+      color: #cccccc;
+      font-size: 15px;
+    }
+
+    .footer-credits {
+      font-size: 13px;
+      color: #555c70;
+      margin-top: 20px !important;
+    }
+
+    /* АДАПТИВНОСТЬ */
+    @media (max-width: 900px) {
+      header { padding: 15px 20px; }
+      .hero-container { flex-direction: column; text-align: center; }
+      .hero-text h1 { font-size: 34px; }
+      .hero-form-box { max-width: 100%; }
+      .legal-container { flex-direction: column; align-items: center; }
+      .legal-box { max-width: 100%; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header>
+    <div class="logo">IT-Master <span>Aidar</span></div>
+    <div class="status-badge">● ИП Действует</div>
+  </header>
+
+  <!-- СЕКЦИЯ 1: ГЛАВНЫЙ ЭКРАН -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Профессиональный<br><span>Компьютерный Мастер</span></h1>
+        <p>Быстрая настройка, очистка и ремонт вашей техники в Казани. Работаю честно, на дому и удаленно через интернет.</p>
+        <div class="features-list">
+          <div class="feature-item">💎 Выдаю официальный кассовый чек (ККТ)</div>
+          <div class="feature-item">💎 Сохранение всех ваших данных и фотографий</div>
+          <div class="feature-item">💎 Фиксированная цена без накруток посредников</div>
+        </div>
+      </div>
+      <div class="hero-form-box">
+        <h3>Опишите проблему</h3>
+        <p>Отвечу или подключусь за 5 минут!</p>
+        <form>
+          <div class="form-group">
+            <label>Ваше имя</label>
+            <input type="text" placeholder="Например, Айрат" required>
+          </div>
+          <div class="form-group">
+            <label>Номер телефона или Telegram</label>
+            <input type="text" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="form-group">
+            <label>Что случилось?</label>
+            <textarea rows="3" placeholder="Тормозит, нужен Windows, греется..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 2: ПРАЙС-ЛИСТ -->
+  <section class="prices-section">
+    <div class="section-title">
+      <h2>Честные цены на услуги</h2>
+      <p>Работа без скрытых накруток. Стоимость фиксируется после экспресс-диагностики</p>
+    </div>
+    <div class="prices-grid">
+      <div class="price-card">
+        <div class="card-icon">💻</div>
+        <h3>Установка Windows</h3>
+        <p class="card-desc">Чистая система (7, 10, 11) без мусора, полная настройка под ключ.</p>
+        <div class="card-price">от 700 ₽</div>
+      </div>
+      <div class="price-card">
+        <div class="card-icon">⚡</div>
+        <h3>Ускорение системы</h3>
+        <p class="card-desc">Удаленная очистка от программного хлама, логов, кэша и скрытых вирусов через AnyDesk.</p>
+        <div class="card-price">от 500 ₽</div>
+      </div>
+      <div class="price-card">
+        <div class="card-icon">🔧</div>
+        <h3>Чистка от пыли</h3>
+        <p class="card-desc">Разборка ноутбука или ПК, продувка, замена термопасты на качественную.</p>
+        <div class="card-price">от 500 ₽</div>
+      </div>
+      <div class="price-card">
+        <div class="card-icon">🛡️</div>
+        <h3>Программы и Софт</h3>
+        <p class="card-desc">Установка пакета Microsoft Office (Word, Excel), надежных антивирусов и утилий.</p>
+        <div class="card-price">от 400 ₽</div>
+      </div>
+    </div>
+  </section>
